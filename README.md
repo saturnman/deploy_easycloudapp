@@ -1,0 +1,16 @@
+# 自动在基于debian的机器上部署easycloudapp映像的脚本
+
+直接下载脚本
+```bash
+wget https://raw.githubusercontent.com/saturnman/deploy_easycloudapp/master/deploy_easycloudapp.sh
+```
+
+之后运行 
+```bash
+sh deploy_easycloudapp.sh
+```
+将会在机器上运行起来，默认端口是10080，可以自行修改脚本设置端口。
+本机运行可以访问
+### http://localhost:10080
+默认登陆管理员用户名是administrator，密码是easycloudapp123。为了安全请在登陆后马上修改密码。
+
