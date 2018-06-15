@@ -1,4 +1,5 @@
 # 自动在基于debian的机器上部署easycloudapp映像的脚本
+[关于背后机制，参考这里](https://zhuanlan.zhihu.com/p/38062002)
 
 直接下载脚本
 ```bash
