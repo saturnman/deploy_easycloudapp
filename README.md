@@ -14,3 +14,5 @@ sh deploy_easycloudapp.sh
 ### http://localhost:10080
 默认登陆管理员用户名是administrator，密码是easycloudapp123。为了安全请在登陆后马上修改密码。
 
+# 相关教程
+###  [1. 部署shadowsocks服务](https://github.com/saturnman/deploy_easycloudapp/blob/master/deploy_ssserver.md)
