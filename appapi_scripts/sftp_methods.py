@@ -5,7 +5,8 @@ import os
 from subprocess import call,check_output,Popen,PIPE
 def _addUser(username,password):
     userList = _getUsers(False)
-    if username in userList:
+    userNameList = [item['用户名'] for item in userList]
+    if username in userNameList:
         print(json.dumps({'success':False,'msg':'用户已经存在'}))
         return 1
     command1 = ['useradd','-m','-s','/usr/sbin/nologin',username]
@@ -23,7 +24,8 @@ def _addUser(username,password):
 
 def _deleteUser(username):
     userList = _getUsers(False)
-    if username not in userList:
+    userNameList = [item['用户名'] for item in userList]
+    if username not in userNameList:
         print(json.dumps({'success':False,'msg':'用户不存在'}))
         return 1
     command = ['userdel','-r',username]
@@ -37,7 +39,8 @@ def _deleteUser(username):
 
 def _changeUserPwd(username,password):
     userList = _getUsers(False)
-    if username not in userList:
+    userNameList = [item['用户名'] for item in userList]
+    if username not in userNameList:
         print(json.dumps({'success':False,'msg':'用户不存在'}))
         return 1
 
@@ -58,7 +61,7 @@ def _getUsers(isPrint=True):
         command2 = ['grep','/home']
         res = check_output(command2,stdin=ps.stdout)
         itemList = res.strip().split('\n')
-        nameList = [name[0:name.index(':')] for name in itemList]
+        nameList = [{'用户名':name[0:name.index(':')]} for name in itemList]
         if isPrint:
             print(json.dumps(nameList))
         return nameList
@@ -74,20 +77,35 @@ methods = {
         }
 methodsDef = {
         'addUser':{
+            'name':'添加用户',
             'numParams':2,
-            'paramHints':['用户名','密码']
+            'paramHints':['用户名','密码'],
+            'defaulValue':['','']
             },
         'deleteUser':{
+            'name':'删除用户',
             'numParams':1,
-            'paramHints':['用户名']
+            'paramHints':['用户名'],
+            'defaultValue':['']
             },
         'changeUserPwd':{
+            'name':'修改密码',
             'numParams':2,
-            'paramHints':['用户名','密码']
+            'paramHints':['用户名','密码'],
+            'defaultValue':['','']
             },
         'getUsers':{
+            'name':'获取用户列表',
             'numParams':0,
-            'paramHints':[]
+            'paramHints':[],
+            'defaultValue':[],
+            'target':{
+                'name':'users',
+                'title':'用户',
+                'key':'users',
+                'type':'table',
+                'fields':['用户名']
+            }
         }
 }
 statesDef = {
