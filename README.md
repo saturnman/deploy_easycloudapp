@@ -17,3 +17,4 @@ sh deploy_easycloudapp.sh
 
 # 相关教程
 ###  [1. 部署shadowsocks服务](https://github.com/saturnman/deploy_easycloudapp/blob/master/deploy_ssserver.md)
+### [2. 部署sftp服务](https://github.com/saturnman/deploy_easycloudapp/blob/master/deploy_sftp.md)

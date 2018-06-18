@@ -9,7 +9,7 @@ def _addUser(username,password):
     if username in userNameList:
         print(json.dumps({'success':False,'msg':'用户已经存在'}))
         return 1
-    command1 = ['useradd','-m','-s','/usr/sbin/nologin',username]
+    command1 = ['useradd','-m','-s','/usr/bin/rssh',username]
     call(command1)
     command2 = ['echo','-e',password+'\\n'+password]
     ps = Popen(command2,stdout=PIPE)
