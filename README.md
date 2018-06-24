@@ -20,3 +20,4 @@ sh deploy_easycloudapp.sh
 ### [2. 部署sftp服务](https://github.com/saturnman/deploy_easycloudapp/blob/master/deploy_sftp.md)
 ### [3. 部署jupyter notebook服务器](https://github.com/saturnman/deploy_easycloudapp/blob/master/deploy_anaconda3_notebook.md)
 ### [4. 部署cloud9 webIDE开发环境](https://github.com/saturnman/deploy_easycloudapp/blob/master/deploy_cloud9.md)
+### [5. 使用共享目录](https://github.com/saturnman/deploy_easycloudapp/blob/master/shared_folder.md)
