@@ -1,5 +1,5 @@
 # 部署sftp服务器
-在部署好easycloudapp应用之后，在下载中添加一个下载项
+在部署好easycloudapp应用之后，在下载中添加一个下载项
 **关于如何部署easycloudapp，请参照：**
 https://github.com/saturnman/deploy_easycloudapp/blob/master/README.md
 
